@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ms-config-server
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: syscxp
+    password: syscxp123
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wj5633/spring-cloud-config-repo
+  security:
+    user:
+      name: user
+      password: 123456
+encrypt:
+  key: foo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+  instance:
+    prefer-ip-address: true
+
+#/{application}/{profile}[/{label}]
+#/{application}-{profile}.yml
+#/{label}/{application}-{profile}.yml
+#/{application}-{profile}.properties
+#/{label}/{application}-{profile}.properties

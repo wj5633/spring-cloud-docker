@@ -1,0 +1,23 @@
+server:
+  port: 8050
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: ms-file-upload
+
+  servlet:
+    multipart:
+      max-file-size: 2000MB
+      max-request-size: 2500MB
+
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

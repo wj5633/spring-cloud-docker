@@ -1,0 +1,22 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: ms-gateway-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+
+zuul:
+  routes:
+    ms-provider:
+      path: /ms-provider/**
+      sensitive-headers: Cookie,Set-Cookie,Authorization
+    ms-hystrix-turbine: /ms-hystrix-turbine/**
+    ms-consumer-movie: /ms-consumer-movie/**
+    ms-consumer-movie-hystrix-stream: /ms-consumer-movie-hystrix-stream/**
+
+  ignored-headers: header1, header2

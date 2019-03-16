@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: ms-foo
+
+  cloud:
+    config:
+      profile: test
+      label: master
+#      uri: http://localhost:8080/
+      discovery:
+        enabled: true
+        service-id: ms-config-server
+      username: user
+      password: 123456
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/

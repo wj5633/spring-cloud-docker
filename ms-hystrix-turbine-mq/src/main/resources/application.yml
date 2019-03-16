@@ -1,0 +1,19 @@
+server:
+  port: 8032
+
+spring:
+  application:
+    name: ms-hystrix-turbine
+  rabbitmq:
+    host: wj251
+    port: 5672
+    username: syscxp
+    password: syscxp123
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://server1:8000/eureka/
+  instance:
+    prefer-ip-address: true
+
